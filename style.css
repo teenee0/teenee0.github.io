@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color:rgba(19, 17, 17, 0.925);
+    margin: 0px;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* -- Header Section begins -- */
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+	width: 100%;
+    height: 9vh;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.6s;
+    z-index: 999;
+}
+
+header.sticky {
+    background-color: #201d1d;
+    height: 7vh;
+}
+
+#hire {
+    text-decoration: none;
+    margin: 2rem;
+    color: #e09a21;
+    font-family: "Press Start 2P";
+    font-size: 1.5em;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+ul.nav {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    min-height: 48px;
+    gap: 3rem;
+    --gap: 3rem;
+    align-items: center;
+    margin: 2rem;
+}
+
+ul.nav li {
+    display: inline-block;
+    list-style: none;
+}
+
+ul.nav li a {
+    text-decoration: none;
+    color:azure;
+    font-family: "consolas";
+    font-size: 2em;
+}
+
+ul.nav li.current-page a {
+    color: #e09a21;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    #nav-bar {
+        height: 100vh;
+    }
+
+    ul.nav {
+        position: fixed;
+        margin: 0;
+        padding-top: min(30vh, 200px);
+        flex-direction: column;
+        inset: 0 0 0 30%;
+        background: hsl(0, 0%, 50%, 0.95);
+        z-index: 1000;
+        transform: translate(100%);
+        transition: 0.6s;
+    }
+
+    ul.nav[data-visible="true"] {
+        transform: translate(0%);
+        transition: 0.6s;
+    }
+
+    @supports (backdrop-filter: blur(1rem)) {
+        ul.nav {
+            background: hsl(0, 0%, 100%, 0.15);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        width: 2rem;
+        aspect-ratio: 1;
+        /* top: 1.5rem; */
+        right: 2rem;
+        background-color: transparent;
+        background-image: url("/icons/menu.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 0;
+        z-index: 1001;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("/icons/close.svg");
+    }
+}
+/* -- Header section ends -- */
+
+/*-- a. Home section begins --*/
+.greeting-page {
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+}
+
+#home-div {
+    position: absolute;
+    width: 60%;
+    height: 25%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#home-div h1 {
+    color:azure;
+    font-size: 3em;
+    font-family: "Press Start 2P";
+    letter-spacing: 2px;
+}
+
+#home-div h2 {
+    color:rgba(41, 36, 36, 0.925);
+    width: 100%;
+    font-size: 3.5em;
+    font-family: consolas;
+    -webkit-text-stroke: 0.05vw #e09a21;
+    animation: typing 2.5s steps(64), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+#home-div h3 {
+    color: #e9b863;
+    font-size: 1.75em;
+    font-family: consolas;
+}
+
+#home-div ul {
+    display: flex;
+    width: 200px;
+    gap: 5em;
+    float: left;
+    padding-left: 0;
+    align-content: center;
+    justify-content: center;
+    margin-left: 0;
+    list-style: none;
+}
+
+#home-div ul li {
+    width: 30px;
+    height: 30px;
+}
+
+#home-div ul li a:hover {
+    opacity: 0.75;
+}
+
+@media only screen and (max-width:1024px) {
+    #home-div h2 {
+        font-size: 3.5vw;
+        -webkit-text-stroke: 0;
+        color: #e9b863;
+    }
+}
+/*-- Home section ends --*/
+
+/*-- b. About section begins --*/
+#about {
+    display:block;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+#about-header {
+    color: #201d1d;
+    font-family: "Press Start 2P";
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 7vh;
+    position: relative;
+    height: 7vh;
+    font-size: 34;
+    background-color: #e9b863;
+}
+
+#about-header:hover {
+    background-color: #e09a21;
+}
+
+#info {
+    display: block;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#info h1 {
+    color: azure;
+    font-family: consolas;
+    font-size: 3em;
+}
+
+#info h2 {
+    color: #e09a21;
+    font-family: "Press Start 2P";
+}
+
+
+#description {
+    display: flex;
+    max-width: 600px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#img-div img {
+    width: 100%;
+    height: 90%;
+    border-radius: 50%;
+    shape-outside: round();
+}
+
+#description p {
+    color: rgb(190, 202, 202);
+    font-family: consolas;
+    font-size: 2em;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#additional-info {
+    display: flex;
+    max-width: 720px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    justify-content: center;
+}
+
+#profile {
+    display: block;
+    text-align: left;
+    width: 50%;
+}
+
+#skills {
+    display: block;
+    text-align: left;
+    width: 50%;
+    padding-left: 20px;
+}
+
+#additional-info h1 {
+    color: #e9b863;
+    font-family: "Press Start 2P";
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+#additional-info h2 {
+    color:rgba(70, 62, 62, 0.925);
+    font-size: 2em;
+}
+
+#additional-info h3 {
+    color: rgb(190, 202, 202);
+    font-family: consolas;
+    font-size: 2em;
+}
+
+#additional-info p {
+    color: rgb(190, 202, 202);
+    font-family: consolas;
+    font-size: 2em;
+    text-align: left;
+}
+
+#profile p a {
+    color: #e09a21;
+    text-decoration: none;
+}
+
+#profile p a:hover {
+    color: #e9b863;
+}
+
+#skills ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#skills ul li {
+    display: inline-block;
+    width: 45%;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 4%;
+}
+
+#skills ul li:hover {
+    scale: 1.1;
+    transition: 0.6s;
+}
+
+#skills span {
+    display: flex;
+    align-items: center;
+}
+
+#skills h2 {
+    line-height: 100%;
+    color: azure;
+    padding-left: 10px;
+    font-family: consolas;
+    font-size: 2.2em;
+}
+
+#skills img {
+    height: 35%;
+    width: 35%;
+}
+
+@media only screen and (max-width: 720px) {
+    #description {
+        display: block;
+        width: 90%;
+    }
+
+    #description p {
+        text-align: justify;
+        width: 90%;
+        padding-left: 0px;
+        margin: 0 auto;
+    }
+
+    #img-div {
+        padding-bottom: 20px;
+    }
+
+    #img-div img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #additional-info {
+        display: block;
+    }
+
+    #profile {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+
+    #profile p {
+        width: 90%;
+        text-align: justify;
+        margin: 0 auto;
+    }
+
+    #data {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #skills {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+
+    #skills p {
+        width: 90%;
+        text-align: justify;
+    }
+
+    #additional-info h2, h3 {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #skills ul {
+        justify-content: center;
+    }
+
+    #skills ul li {
+        width: 50%;
+    }
+}
+/*-- About section ends --*/
+
+/*-- c. Education section begins here --*/
+#education {
+    display: block;
+    width: 100%;
+}
+
+#about-education {
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+#about-education img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+#about-education div {
+    width: 460px;
+    margin: 0 auto;
+}
+
+#about-education h1 {
+    text-align: center;
+    color: #e09a21;
+    font-family: "Press Start 2P";
+    font-size: 1.85em;
+    letter-spacing: 2px;
+}
+
+#about-education h2 {
+    margin-top: 0;
+    color: #e9b863;
+    font-family: consolas;
+    font-size: 1.75em;
+}
+
+#about-education h3 {
+    color: azure;
+    font-family: consolas;
+    font-size: 1.75em;
+}
+
+#about-education h4 {
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+    color: rgb(190, 202, 202);
+    font-family: consolas;
+    font-size: 1.6em;
+}
+
+#about-education ul li {
+    color: azure;
+    font-family: consolas;
+    font-size: 1.7em;
+}
+
+#about-education ul li a {
+    text-decoration: none;
+    color: #e9b863;
+}
+
+#about-education ul li a:hover {
+    color: #e09a21;
+}
+
+@media only screen and (max-width: 720px) {
+    #about-education img {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    #about-education div {
+        width: 100%;
+        padding: 10px;
+    }
+}
+/*-- Education section ends --*/
+
+/*-- d. Projects section begins here --*/
+#projects-list {
+    display: block;
+    width: 1024px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+#projects-list li {
+    display: inline-block;
+    width: 33%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#projects-list li:first-child {
+    border: 2px solid #e09a21;
+}
+
+#projects-list li:nth-child(2) img {
+    border: 2px solid cyan;
+}
+
+#projects-list li img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    #projects-list {
+        width: 720px;
+    }
+
+    #projects-list li {
+        width: 46%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #projects-list {
+        width: 100%
+    }
+
+    #projects-list li {
+        display: block;
+        margin: 20px auto;
+        width: 75%;
+    }
+}
+/*-- Projects section ends here --*/
+
+/*-- e. Contacts section begins here --*/
+#contact {
+    overflow: hidden;
+}
+
+#contact-info {
+    /* height: 80vh; */
+    text-align: center;
+}
+
+#contact-info h1 {
+    margin-top: 15vh;
+    color: azure;
+    font-family: consolas;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+#contact-info h2 {
+    color: #e9b863;
+    font-family: consolas;
+    font-size: 1.75em;
+}
+
+#info-list {
+    display: block;
+    width: 1024px;
+    margin: 100px auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+#info-list li {
+    display: inline-block;
+    width: 30%;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    list-style: none;
+}
+
+#info-list li img {
+    margin: 0 auto;
+    width: 30%;
+    height: 30%;
+}
+
+#info-piece {
+    display: block;
+    height: 200px;
+    text-align: center;
+}
+
+#info-piece h1 {
+    color: #e09a21;
+    font-family: consolas;
+    font-size: 2em;
+    margin: 0;
+    margin-top: 25px;
+}
+
+#info-piece p {
+    color: azure;
+    font-family: consolas;
+    font-size: 1.5em;
+}
+#info-piece img {
+    width: 35%;
+    height: 35%;
+}
+#info-piece a {
+    text-decoration: none;
+}
+#info-piece h1 a {
+    text-decoration: none;
+    color: #e9b863;
+}
+@media only screen and (max-width: 1024px) {
+    #info-list {
+        width: 720px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #info-list {
+        width: 100%;
+    }
+
+    #info-list li {
+        width: 75%;
+        margin: 30px auto;
+    }
+}
+/*-- Contacts section ends here --*/
+
+/*-- Footer begins here --*/
+#bottom {
+    display: flex;
+    height: 13vh;
+    background-color: rgba(41, 36, 36, 0.925);
+    align-items: center;
+}
+
+#bottom h1 {
+    color: rgb(121, 124, 124);
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/*-- Footer ends here --*/
